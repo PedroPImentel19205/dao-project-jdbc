@@ -1,7 +1,9 @@
 package application;
 
 import model.entities.Department;
+import model.entities.Seller;
 
+import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -12,7 +14,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         Department obj = new Department(13,"books");
-        System.out.println(obj);
+
+        Seller seller = new Seller(5,"Bob","bob@gmail.com",new Date(),2500.0,obj);
+        System.out.println(seller);
 
         sc.close();
     }
