@@ -5,6 +5,7 @@ import model.entities.Seller;
 import modelDAO.DaoFactory;
 import modelDAO.SellerDao;
 
+import java.sql.Connection;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
@@ -15,11 +16,10 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Department obj = new Department(13,"books");
-
-        Seller seller = new Seller(5,"Bob","bob@gmail.com",new Date(),2500.0,obj);
-
         SellerDao sellerDao = DaoFactory.createSellerDao();
+
+        Seller seller = sellerDao.findById(3);
+        System.out.println(seller);
 
         sc.close();
     }
